@@ -1,3 +1,20 @@
 #!/usr/bin/env ruby
 
 require 'robot_simulator'
+
+table = RobotSimulator::Table.new
+robot = RobotSimulator::Robot.new
+
+puts 'Your Robot is ready for play!'
+puts 'First valid command is: PLACE X,Y,F e.g.(PLACE 0,0,NORTH)'
+puts 'then you can continue with MOVE - LEFT - RIGHT - REPORT'
+
+begin
+  loop do
+    puts 'input command (EXIT to quit): '
+
+    input = STDIN.gets
+
+    break if input =~ /exit/i
+  end
+end
