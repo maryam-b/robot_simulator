@@ -5,7 +5,7 @@ require 'robot_simulator'
 table = RobotSimulator::Table.new
 robot = RobotSimulator::Robot.new
 
-command = RobotSimulator::CommandHandler.new(table, robot)
+command = RobotSimulator::CommandsHandler.new(table, robot)
 
 puts 'Your Robot is ready for play!'
 puts 'First valid command is: PLACE X,Y,F e.g.(PLACE 0,0,NORTH)'

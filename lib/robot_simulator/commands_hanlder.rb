@@ -1,5 +1,5 @@
 module RobotSimulator
-  class CommandHandler
+  class CommandsHandler
     PLACE_REGX = /^PLACE\s+(?<params>\d+\s*,\s*\d+\s*,\s*(NORTH|SOUTH|EAST|WEST))$/
     REPORT_REGEX = /^REPORT\s+(?<params>)$/
     LEFT_REGEX = /^LEFT\s+(?<params>)$/

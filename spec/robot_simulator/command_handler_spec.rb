@@ -1,5 +1,5 @@
 require 'spec_helper'
-describe RobotSimulator::CommandHandler do
+describe RobotSimulator::CommandsHandler do
   let(:table) { RobotSimulator::Table.new }
   let(:robot) { RobotSimulator::Robot.new }
   let(:command) { described_class.new(table, robot) }
