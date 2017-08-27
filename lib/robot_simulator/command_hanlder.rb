@@ -4,7 +4,6 @@ module RobotSimulator
     REPORT_REGEX = /^REPORT\s+(?<params>)$/
     EXIT_REGEX = /^EXIT\s+(?<params>)$/i
 
-
     COMMANDS_MATCH = [
       [PLACE_REGX, Utils::Place],
       [REPORT_REGEX, Utils::Report],
@@ -23,7 +22,7 @@ module RobotSimulator
       return if cmd[1] == 'quit'
       match = cmd[0].match(input)
       params = match[:params] ? match[:params].split(',') : nil
-      direction = Utils::Direction.new(*params) unless params.empty?
+      direction = params.empty? ? nil : Utils::Direction.new(*params)
       cmd[1].new(@robot, @table, direction).exec!
     end
   end

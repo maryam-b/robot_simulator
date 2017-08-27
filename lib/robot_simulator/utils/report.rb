@@ -1,12 +1,6 @@
 module RobotSimulator
   module Utils
-    class Report
-
-      def initialize(robot, table)
-        @robot = robot
-        @table = table
-      end
-
+    class Report < Command
       def exec!
         puts robot_current_position
       end

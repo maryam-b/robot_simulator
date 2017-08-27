@@ -13,11 +13,20 @@ describe RobotSimulator::CommandHandler do
   describe '#parser' do
     context 'valid input' do
       let(:direction) { RobotSimulator::Utils::Direction.new(0, 0, 'NORTH') }
+
       context 'PLACE command' do
         let(:input) { 'PLACE 0,0,NORTH' }
         it 'should call the Place class' do
           expect(RobotSimulator::Utils::Direction).to receive(:new).with('0', '0', 'NORTH').and_return(direction)
           allow_any_instance_of(RobotSimulator::Utils::Place).to receive(:new).with(robot, table, direction)
+          command.parser(input)
+        end
+      end
+
+      context 'REPORT command' do
+        let(:input) { "REPORT\n" }
+        it 'should call the Right class' do
+          allow_any_instance_of(RobotSimulator::Utils::Report).to receive(:new).with(robot, table)
           command.parser(input)
         end
       end

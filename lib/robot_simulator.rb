@@ -1,6 +1,7 @@
 require 'robot_simulator/version'
 require 'robot_simulator/table'
 require 'robot_simulator/robot'
+require 'robot_simulator/utils/command'
 require 'robot_simulator/utils/direction'
 require 'robot_simulator/utils/place'
 require 'robot_simulator/utils/report'
