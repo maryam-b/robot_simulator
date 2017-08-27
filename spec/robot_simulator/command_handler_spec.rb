@@ -30,6 +30,28 @@ describe RobotSimulator::CommandHandler do
           command.parser(input)
         end
       end
+
+      context 'LEFT command' do
+        let(:input) { "LEFT\n" }
+        before do
+          robot.current_position = direction
+        end
+        it 'should call the Left class' do
+          allow_any_instance_of(RobotSimulator::Utils::Left).to receive(:new).with(robot, table)
+          command.parser(input)
+        end
+      end
+
+      context 'RIGHT command' do
+        let(:input) { "RIGHT\n" }
+        before do
+          robot.current_position = direction
+        end
+        it 'should call the Right class' do
+          allow_any_instance_of(RobotSimulator::Utils::Right).to receive(:new).with(robot, table)
+          command.parser(input)
+        end
+      end
     end
 
     context 'invalid input' do

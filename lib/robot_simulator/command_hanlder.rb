@@ -2,11 +2,16 @@ module RobotSimulator
   class CommandHandler
     PLACE_REGX = /^PLACE\s+(?<params>\d+\s*,\s*\d+\s*,\s*(NORTH|SOUTH|EAST|WEST))$/
     REPORT_REGEX = /^REPORT\s+(?<params>)$/
+    LEFT_REGEX = /^LEFT\s+(?<params>)$/
+    RIGHT_REGEX = /^RIGHT\s+(?<params>)$/
+    MOVE_REGEX = /^MOVE\s+(?<params>)$/
     EXIT_REGEX = /^EXIT\s+(?<params>)$/i
 
     COMMANDS_MATCH = [
       [PLACE_REGX, Utils::Place],
       [REPORT_REGEX, Utils::Report],
+      [LEFT_REGEX, Utils::Left],
+      [RIGHT_REGEX, Utils::Right],
       [EXIT_REGEX, 'quit']
     ].freeze
 
