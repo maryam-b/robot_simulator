@@ -9,8 +9,8 @@ module RobotSimulator
         @orientation = orientation
       end
 
-      def move_to(current_orientation)
-        send(current_orientation)
+      def move_to
+        send(@orientation.downcase)
       end
 
       private

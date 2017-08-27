@@ -17,7 +17,7 @@ describe RobotSimulator::Utils::Direction do
     context 'north' do
       let(:new_y) { 2 }
       it 'should 1 unit move to north' do
-        move_north = direction.move_to('north')
+        move_north = direction.move_to
         expect(move_north.position_x).to eq position_x
         expect(move_north.position_y).to eq new_y
         expect(move_north.orientation).to eq orientation
@@ -25,9 +25,10 @@ describe RobotSimulator::Utils::Direction do
     end
 
     context 'east' do
+      let(:orientation) { 'EAST' }
       let(:new_x) { 2 }
-      it 'should 1 unit move to north' do
-        move_north = direction.move_to('east')
+      it 'should 1 unit move to east' do
+        move_north = direction.move_to
         expect(move_north.position_x).to eq new_x
         expect(move_north.position_y).to eq position_y
         expect(move_north.orientation).to eq orientation
@@ -35,9 +36,10 @@ describe RobotSimulator::Utils::Direction do
     end
 
     context 'south' do
+      let(:orientation) { 'SOUTH' }
       let(:new_y) { 0 }
-      it 'should 1 unit move to north' do
-        move_north = direction.move_to('south')
+      it 'should 1 unit move to south' do
+        move_north = direction.move_to
         expect(move_north.position_x).to eq position_x
         expect(move_north.position_y).to eq new_y
         expect(move_north.orientation).to eq orientation
@@ -45,9 +47,10 @@ describe RobotSimulator::Utils::Direction do
     end
 
     context 'west' do
+      let(:orientation) { 'WEST' }
       let(:new_x) { 0 }
-      it 'should 1 unit move to north' do
-        move_north = direction.move_to('west')
+      it 'should 1 unit move to west' do
+        move_north = direction.move_to
         expect(move_north.position_x).to eq new_x
         expect(move_north.position_y).to eq position_y
         expect(move_north.orientation).to eq orientation
@@ -55,8 +58,9 @@ describe RobotSimulator::Utils::Direction do
     end
 
     context 'not available method' do
+      let(:orientation) { 'NOWHERE' }
       it 'should raise error' do
-        expect { direction.move_to('nowhere') }.to raise_error(RobotSimulator::NotValidMethodError)
+        expect { direction.move_to }.to raise_error(RobotSimulator::NotValidMethodError)
       end
     end
   end
