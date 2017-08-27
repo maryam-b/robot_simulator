@@ -9,8 +9,8 @@ require 'robot_simulator/utils/left'
 require 'robot_simulator/utils/right'
 require 'robot_simulator/utils/report'
 require 'robot_simulator/utils/move'
-require 'robot_simulator/command_hanlder'
-require 'robot_simulator/error_handler'
+require 'robot_simulator/commands_hanlder'
+require 'robot_simulator/errors_handler'
 
 module RobotSimulator
   # Your code goes here...
