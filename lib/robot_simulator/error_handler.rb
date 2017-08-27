@@ -22,4 +22,16 @@ module RobotSimulator
       'Seems your robot is not placed yet!'
     end
   end
+
+  class AbstractMethodError < ErrorsHandler
+    def message
+      'Abstract method'
+    end
+  end
+
+  class NotValidMethodError < ErrorsHandler
+    def message
+      'Not valid request!'
+    end
+  end
 end

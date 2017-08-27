@@ -12,6 +12,7 @@ module RobotSimulator
       [REPORT_REGEX, Utils::Report],
       [LEFT_REGEX, Utils::Left],
       [RIGHT_REGEX, Utils::Right],
+      [MOVE_REGEX, Utils::Move],
       [EXIT_REGEX, 'quit']
     ].freeze
 

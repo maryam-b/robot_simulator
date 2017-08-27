@@ -52,6 +52,17 @@ describe RobotSimulator::CommandHandler do
           command.parser(input)
         end
       end
+
+      context 'MOVE command' do
+        let(:input) { "MOVE\n" }
+        before do
+          robot.current_position = direction
+        end
+        it 'should call the Move class' do
+          allow_any_instance_of(RobotSimulator::Utils::Move).to receive(:new).with(robot, table)
+          command.parser(input)
+        end
+      end
     end
 
     context 'invalid input' do
