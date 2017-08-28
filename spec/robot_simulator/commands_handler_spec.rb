@@ -25,7 +25,7 @@ describe RobotSimulator::CommandsHandler do
 
       context 'REPORT command' do
         let(:input) { "REPORT\n" }
-        it 'should call the Right class' do
+        it 'should call the Report class' do
           allow_any_instance_of(RobotSimulator::Utils::Report).to receive(:new).with(robot, table)
           command.parser(input)
         end
