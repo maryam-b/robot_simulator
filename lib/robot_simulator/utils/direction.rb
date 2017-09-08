@@ -6,7 +6,7 @@ module RobotSimulator
       def initialize(x, y, orientation)
         @position_x = x.to_i
         @position_y = y.to_i
-        @orientation = orientation
+        @orientation = orientation.strip
       end
 
       def move_to
